@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Create from './Create'
+import Home from './Home'
 import List from './List'
 import Time from './Time'
 import {
@@ -24,9 +25,7 @@ class Body extends Component {
           <Time />
         </Route>
         <Route path="/">
-          <div>
-            Hello World
-          </div>
+          <Home />
         </Route>
       </Switch>
       </div>
