@@ -18,6 +18,16 @@
     padding-bottom: 16px;
 }
 
+.ActionBar {
+  display: flex;
+  justify-content: flex-end;
+  position: -webkit-sticky;
+    position: sticky;
+    top: -16px;
+    background: white;
+    z-index: 1000;
+}
+
 .TwoColumns {
   padding: 16px;
   display: flex;
@@ -51,4 +61,35 @@ line-height: 21px;
 
 .ColumnItemRight {
   width : calc(50% - 4px);
+}
+
+.DescriptionBox {
+  display: flex;
+}
+
+.DescriptionTextarea {
+  width: 100%;
+}
+
+.DescriptionTextarea > textarea {
+  width: 100%;
+}
+
+.QuestionAnswers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Question {
+  width: 50%;
+  min-width: 300px;
+}
+
+.Answer {
+  width: 50%;
+  min-width: 300px;
+}
+
+.Answer > textarea {
+  width: 100%;
 }
