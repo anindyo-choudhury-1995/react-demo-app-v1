@@ -1,0 +1,54 @@
+.CreateContainer {
+  height: calc(100% - 32px);
+  background: white;
+  padding: 16px;
+  color: #312d2a;
+}
+
+.Heading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #312d2a;
+    display: block;
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 16px;
+}
+
+.TwoColumns {
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Columns {
+  width: 40%;
+  min-width: 300px;
+  padding: 0 16px;
+}
+
+.ColumnItems {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ColumnItemLeft {
+width: calc(50% - 4px);
+text-align: right;
+color:rgb(79, 79, 79);
+cursor:default;
+display:inline;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size:12px;
+font-weight:700;
+text-size-adjust:100%;
+line-height: 21px;
+}
+
+.ColumnItemRight {
+  width : calc(50% - 4px);
+}
