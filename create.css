@@ -3,6 +3,7 @@
   background: white;
   padding: 16px;
   color: #312d2a;
+  overflow:auto;
 }
 
 .Heading {
