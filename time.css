@@ -161,6 +161,80 @@ writing-mode:horizontal-tb;
   min-width: 120px;
 }
 
+.TimeEntryTable {
+  overflow: auto;
+}
+
 .TimeCell {
   width: 40px;
+}
+
+.TimeAction {
+  position: sticky;
+    width: fit-content;
+    left: 0;
+}
+
+.TimeActionButtons {
+  align-items:center;
+background-color:rgba(0, 0, 0, 0);
+background-image:none;
+border-bottom-color:rgb(203, 204, 205);
+border-bottom-left-radius:2px;
+border-bottom-right-radius:2px;
+border-bottom-style:solid;
+border-bottom-width:1px;
+border-image-outset:0;
+border-image-repeat:stretch;
+border-image-slice:100%;
+border-image-source:none;
+border-image-width:1;
+border-left-color:rgb(203, 204, 205);
+border-left-style:solid;
+border-left-width:1px;
+border-right-color:rgb(203, 204, 205);
+border-right-style:solid;
+border-right-width:1px;
+border-top-color:rgb(203, 204, 205);
+border-top-left-radius:2px;
+border-top-right-radius:2px;
+border-top-style:solid;
+border-top-width:1px;
+box-shadow:none;
+box-sizing:border-box;
+color:rgb(0, 0, 0);
+cursor:default;
+/* display:block; */
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size:11px;
+font-stretch:100%;
+font-style:normal;
+font-variant-caps:normal;
+font-variant-east-asian:normal;
+font-variant-ligatures:normal;
+font-variant-numeric:normal;
+font-weight:400;
+height:31.9844px;
+justify-content:center;
+letter-spacing:normal;
+line-height:normal;
+margin: 4px;
+padding: 8px;
+overflow-x:hidden;
+overflow-y:hidden;
+text-align:center;
+text-decoration-color:rgb(0, 0, 0);
+text-decoration-line:none;
+text-decoration-style:solid;
+text-indent:0px;
+text-rendering:auto;
+text-shadow:none;
+text-size-adjust:100%;
+text-transform:none;
+white-space:nowrap;
+word-spacing:0px;
+writing-mode:horizontal-tb;
+-webkit-appearance:none;
+-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+-webkit-border-image:none;
 }

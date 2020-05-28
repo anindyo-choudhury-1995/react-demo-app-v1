@@ -79,7 +79,7 @@ class Time extends Component {
               { 
                 nums.map((num, index) => (
               <tr key={index}>
-                <th>
+                <td>
                   <select name="cars" id="cars">
                     <option value="">Select Service Request</option>
                     <option value="volvo">Volvo</option>
@@ -87,16 +87,16 @@ class Time extends Component {
                     <option value="opel">Opel</option>
                     <option value="audi">Audi</option>
                   </select>
-                </th>
-                <th>
+                </td>
+                <td>
                   <select name="cars" id="cars">
                     <option value="">Select Activity</option>
                     <option value="volvo">Day 1 Onboarding</option>
                     <option value="saab">Technical Support</option>
                     <option value="opel">Cloud Coaching</option>
                   </select>
-                </th>
-                <th>
+                </td>
+                <td>
                   <select name="cars" id="cars">
                     <option value="">Task Type</option>
                     <option value="volvo">Volvo</option>
@@ -104,8 +104,8 @@ class Time extends Component {
                     <option value="opel">Opel</option>
                     <option value="audi">Audi</option>
                   </select>
-                </th>
-                <th>
+                </td>
+                <td>
                   <select name="cars" id="cars">
                     <option value="">Delivery Type</option>
                     <option value="volvo">Volvo</option>
@@ -114,33 +114,48 @@ class Time extends Component {
                     <option value="audi">Audi</option>
                   </select>
                 
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number"/>
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th>
+                </td>
+                <td>
                   <input className="TimeCell" type="number" />
-                </th>
-                <th><button>Note</button></th>
-                <th><button>Delete</button></th>
+                </td>
+                <td><button>Note</button></td>
+                <td><button>Delete</button></td>
               </tr>
                 ))
               }
+              <tr>
+                <td colspan="13">
+                  <div className="TimeAction">
+                  <button className="TimeActionButtons">
+                    Add Service Row
+                  </button>
+                  <button className="TimeActionButtons">
+                    Add Non Service Row
+                  </button>
+                  <button className="TimeActionButtons">
+                    Save
+                  </button>
+                  </div>
+                </td>
+              </tr>
               </tbody>
               
 
