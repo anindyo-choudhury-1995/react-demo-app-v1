@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./time.css";
-  const nums = [1,2,3];
 class Time extends Component {
 
   render() {
@@ -77,7 +76,7 @@ class Time extends Component {
               </thead>
               <tbody>
               { 
-                nums.map((num, index) => (
+                [1,2,3].map((num, index) => (
               <tr key={index}>
                 <td>
                   <select name="cars" id="cars">
@@ -156,9 +155,35 @@ class Time extends Component {
                   </div>
                 </td>
               </tr>
+              <tr>
+                <td colspan="4">
+                  Total
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td className="TimeTotal">
+                  0
+                </td>
+                <td colspan="2">
+                </td>
+              </tr>
               </tbody>
-              
-
             </table>
           </div>
         </div>
