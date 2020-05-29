@@ -6,8 +6,9 @@ class Time extends Component {
   }
   
   addService = (event) => {
-    this.state.nums.push(this.state.nums.length+1);
-    console.log(this.state.nums);
+    var newNums = JSON.parse(JSON.stringify(this.state.nums));
+    newNums.push(newNums.length+1);
+    this.setState({nums: newNums});
   }
   render() {
     return (
