@@ -2,6 +2,485 @@ import React, { Component } from "react";
 import "./create.css";
 
 class Create extends Component {
+  accounts = [
+    {
+      value: 300000398463509,
+      label:
+        "Bank of Montreal, Hong Kong Branch (HONG KONG, HK) - 2001750521 - 300000398463509",
+      name: "Bank of Montreal, Hong Kong Branch (HONG KONG, HK) - 2001750521",
+      number: "139543",
+      country: "HK"
+    },
+    {
+      value: 300000398520513,
+      label: "埃森哲 (北京市, CN) - 300000398520513",
+      name: "埃森哲 (北京市, CN)",
+      number: "140018",
+      country: "CN"
+    },
+    {
+      value: 300000398530634,
+      label: "EFG EUROBANK ERGASIAS S.A. (ΑΘΉΝΑ, GR) - 300000398530634",
+      name: "EFG EUROBANK ERGASIAS S.A. (ΑΘΉΝΑ, GR)",
+      number: "400682",
+      country: "GR"
+    },
+    {
+      value: 300000404829376,
+      label: "Allan Gray Limited (FORESHORE, ZA) - 300000404829376",
+      name: "Allan Gray Limited (FORESHORE, ZA)",
+      number: "444373",
+      country: "ZA"
+    },
+    {
+      value: 300000440477222,
+      label: "BBVA (MADRID, ES) - 300000440477222",
+      name: "BBVA (MADRID, ES)",
+      number: "537485",
+      country: "ES"
+    },
+    {
+      value: 300000440471468,
+      label: "BRADESCO New York Branch (New York, US) - 300000440471468",
+      name: "BRADESCO New York Branch (New York, US)",
+      number: "537490",
+      country: "US"
+    },
+    {
+      value: 300000440892146,
+      label: "novacaixagalicia (GENEVE, CH) - 300000440892146",
+      name: "novacaixagalicia (GENEVE, CH)",
+      number: "538157",
+      country: "CH"
+    },
+    {
+      value: 300000504204113,
+      label: "Scoban Plc (EDINBURGH, GB) - 300000504204113",
+      name: "Scoban Plc (EDINBURGH, GB)",
+      number: "810712",
+      country: "GB"
+    },
+    {
+      value: 300000522100918,
+      label:
+        "方正国际软件（北京）有限公司 (北京市, CN) - 1331150107 - 300000522100918",
+      name: "方正国际软件（北京）有限公司 (北京市, CN) - 1331150107",
+      number: "812051",
+      country: "CN"
+    },
+    {
+      value: 300000586913533,
+      label:
+        "PT. Metrocom Global Solusi (JAKARTA SELATAN, ID) - 300000586913533",
+      name: "PT. Metrocom Global Solusi (JAKARTA SELATAN, ID)",
+      number: "860042",
+      country: "ID"
+    },
+    {
+      value: 300000431231922,
+      label:
+        "Oracle Financial Services Software Pte. Ltd. (NORTH RYDE, AU) - 300000431231922",
+      name: "Oracle Financial Services Software Pte. Ltd. (NORTH RYDE, AU)",
+      number: "536718",
+      country: "AU"
+    },
+    {
+      value: 300000588977423,
+      label: "Sharjah Islamic Bank (SHARJAH, AE) - 300000588977423",
+      name: "Sharjah Islamic Bank (SHARJAH, AE)",
+      number: "860100",
+      country: "AE"
+    },
+    {
+      value: 300000610312218,
+      label: "Hyundai Card Co Ltd (영등포구, KR) - 300000610312218",
+      name: "Hyundai Card Co Ltd (영등포구, KR)",
+      number: "865579",
+      country: "KR"
+    },
+    {
+      value: 300000588977409,
+      label: "ROMSYS S.R.L (BUCUREŞTI, RO) - 300000588977409",
+      name: "ROMSYS S.R.L (BUCUREŞTI, RO)",
+      number: "860099",
+      country: "RO"
+    },
+    {
+      value: 300000588791221,
+      label: "National Societe Generale Bank (CAIRO, EG) - 300000588791221",
+      name: "National Societe Generale Bank (CAIRO, EG)",
+      number: "860073",
+      country: "EG"
+    },
+    {
+      value: 300000588977507,
+      label: " 江苏常熟农村商业银行股份有限公司 (常熟市, CN) - 300000588977507",
+      name: " 江苏常熟农村商业银行股份有限公司 (常熟市, CN)",
+      number: "860106",
+      country: "CN"
+    },
+    {
+      value: 300000610312175,
+      label:
+        "National Societe Generale Bank (CAIRO, EG) - -155198954 - 300000610312175",
+      name: "National Societe Generale Bank (CAIRO, EG) - -155198954",
+      number: "865577",
+      country: "EG"
+    },
+    {
+      value: 300000440445049,
+      label: "United Bank Ltd (KARACHI CITY, PK) - 300000440445049",
+      name: "United Bank Ltd (KARACHI CITY, PK)",
+      number: "537420",
+      country: "PK"
+    },
+    {
+      value: 300000610312160,
+      label: "Hyundai Capital Services Inc (Raleigh, US) - 300000610312160",
+      name: "Hyundai Capital Services Inc (Raleigh, US)",
+      number: "865576",
+      country: "US"
+    },
+    {
+      value: 300000632647541,
+      label: "Premier Systems (Pvt) Limited (Kabul, AF) - 300000632647541",
+      name: "Premier Systems (Pvt) Limited (Kabul, AF)",
+      number: "867748",
+      country: "AF"
+    },
+    {
+      value: 300000588791251,
+      label: "S.C. Volksbank Romania S.A (BUCUREŞTI, RO) - 300000588791251",
+      name: "S.C. Volksbank Romania S.A (BUCUREŞTI, RO)",
+      number: "860074",
+      country: "RO"
+    },
+    {
+      value: 300000588977493,
+      label: "泉州银行 (泉州市, CN) - 300000588977493",
+      name: "泉州银行 (泉州市, CN)",
+      number: "860105",
+      country: "CN"
+    },
+    {
+      value: 300000586913412,
+      label: "BANK OF JORDAN (AMMAN, JO) - 941996771 - 300000586913412",
+      name: "BANK OF JORDAN (AMMAN, JO) - 941996771",
+      number: "859682",
+      country: "JO"
+    },
+    {
+      value: 300000586913444,
+      label: "Oracle de Venezuela S.R.L. (CARACAS, VE) - 300000586913444",
+      name: "Oracle de Venezuela S.R.L. (CARACAS, VE)",
+      number: "859683",
+      country: "VE"
+    },
+    {
+      value: 300000397769880,
+      label:
+        "PT Sigma Solusi Integrasi (JAKARTA SELATAN, ID) - 300000397769880",
+      name: "PT Sigma Solusi Integrasi (JAKARTA SELATAN, ID)",
+      number: "138649",
+      country: "ID"
+    }
+  ];
+  opportunities = [
+    {
+      value: 300003655844643,
+      label: "9003 - Z_ADIT_MEGHARAO",
+      name: "Z_ADIT_MEGHARAO",
+      number: "9003",
+      account: {
+        id: 300000729251791,
+        name: "Baiduri Bank Berhad (Bandar Seri Begawan, BN)",
+        number: "876508"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 300003726592643,
+      label: "11003 - Z_ADIT_MEGHRAO_20190130",
+      name: "Z_ADIT_MEGHRAO_20190130",
+      number: "11003",
+      account: {
+        id: 100000693904200,
+        name: "Monash University (Monash University, AU)",
+        number: "1260243"
+      },
+      salesStage: "6. Close"
+    },
+    {
+      value: 100004504311769,
+      label: "9NBKV - CA/ Amundi",
+      name: "CA/ Amundi",
+      number: "9NBKV",
+      account: {
+        id: 100000811366679,
+        name: "CREDIT AGRICOLE ASSET MANAGEMENT (PARIS, FR)",
+        number: "3730485"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504304741,
+      label: "9KKGN - CME HCM",
+      name: "CME HCM",
+      number: "9KKGN",
+      account: {
+        id: 100004317437110,
+        name: "CME Media Services Limited, organizacni slozka (PRAHA, CZ)",
+        number: "13292585"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504306596,
+      label: "B53XL - L'OREAL",
+      name: "L'OREAL",
+      number: "B53XL",
+      account: {
+        id: 100000811311637,
+        name: "LOreal Produits de Luxe International",
+        number: "3710915"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504313181,
+      label:
+        "9MZS3 - N-ID-OD-PT Bank Tabungan Pensiunan Nasional-OSSI-PP-332444",
+      name: "N-ID-OD-PT Bank Tabungan Pensiunan Nasional-OSSI-PP-332444",
+      number: "9MZS3",
+      account: {
+        id: 100000810802019,
+        name: "PT Bank Tabungan Pensiunan Nasional (BANDUNG, ID)",
+        number: "3613037"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504313119,
+      label: "9N8VD - OD_CPS_LOTT_FY19",
+      name: "OD_CPS_LOTT_FY19",
+      number: "9N8VD",
+      account: {
+        id: 100000693905219,
+        name: "Cox Corporate Services, Inc.",
+        number: "1261262"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504285304,
+      label:
+        "9JRDZ - Saas: Villery & Boch - SCM Planning - CPQ - Service Cloud",
+      name: "Saas: Villery & Boch - SCM Planning - CPQ - Service Cloud",
+      number: "9JRDZ",
+      account: {
+        id: 100000809841082,
+        name: "Villeroy & Boch AG",
+        number: "3418545"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504313713,
+      label: "9NG9P - SCM Etapa 2 en Renova",
+      name: "SCM Etapa 2 en Renova",
+      number: "9NG9P",
+      account: {
+        id: 100004326221045,
+        name: "Renova S.A. (SAN ISIDRO, AR)",
+        number: "13515513"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504309468,
+      label: "9MFTZ - FY19/APPS/EPM/MCMC Financial Budgeting",
+      name: "FY19/APPS/EPM/MCMC Financial Budgeting",
+      number: "9MFTZ",
+      account: {
+        id: 100000810523756,
+        name: "Suruhanjaya Komunikasi dan Multimedia Malaysia",
+        number: "3571682"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504311509,
+      label: "9N99D - DC Setup",
+      name: "DC Setup",
+      number: "9N99D",
+      account: { id: 100000811003517, name: "C-Dot", number: "3654653" },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504285595,
+      label: "B4ZRZ - NTTA_License Project_ AT/GF",
+      name: "NTTA_License Project_ AT/GF",
+      number: "B4ZRZ",
+      account: {
+        id: 100000812130305,
+        name: "NTT America, Inc.",
+        number: "3863594"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504313184,
+      label: "9N8BK - Vision 7 - Tax Reporting",
+      name: "Vision 7 - Tax Reporting",
+      number: "9N8BK",
+      account: {
+        id: 100000812284003,
+        name: "Vision 7 International Inc",
+        number: "3912107"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504324157,
+      label: "5DJ72 - OD_Exa_PPG",
+      name: "OD_Exa_PPG",
+      number: "5DJ72",
+      account: {
+        id: 100004315725840,
+        name: "PPG Glass Group (PITTSBURGH, US)",
+        number: "13245502"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504315198,
+      label: "9JWGY - Summit资金管理项目",
+      name: "Summit资金管理项目",
+      number: "9JWGY",
+      account: {
+        id: 100000810212206,
+        name: "交通银行股份有限公司 (上海市, CN)",
+        number: "3506127"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504285629,
+      label: "9JJMZ - N-FR-DGFIP_annual",
+      name: "N-FR-DGFIP_annual",
+      number: "9JJMZ",
+      account: { id: 100000809600671, name: "DGFIP", number: "3394854" },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504309541,
+      label: "9WWX6 - JP_NSCS_JDEadditional",
+      name: "JP_NSCS_JDEadditional",
+      number: "9WWX6",
+      account: {
+        id: 100000815494119,
+        name: "株式会社ニレコ",
+        number: "4532241"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504310107,
+      label: "9MDQ6 - NGV-PE-MiBanco Servicios Proy IFSR9",
+      name: "NGV-PE-MiBanco Servicios Proy IFSR9",
+      number: "9MDQ6",
+      account: {
+        id: 100004320544354,
+        name: "Mibanco - Banco de la Micro Empresa S.A. (Lima, PE)",
+        number: "13375477"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004504312685,
+      label: "9N6WM - Indian Coast Gurad",
+      name: "Indian Coast Gurad",
+      number: "9N6WM",
+      account: {
+        id: 100000809841239,
+        name: "Indian Coast Guard",
+        number: "3418698"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004317199639,
+      label: "9RB2B - ELQ-nic-IN",
+      name: "ELQ-nic-IN",
+      number: "9RB2B",
+      account: {
+        id: 100004235544078,
+        name: "nic (BENGALURU, IN)",
+        number: "12665190"
+      },
+      salesStage: "1. Assessment & Qualification"
+    },
+    {
+      value: 100004317199646,
+      label: "9RB7B - HF 10 NUP DBSE2 Techdata Godrej",
+      name: "HF 10 NUP DBSE2 Techdata Godrej",
+      number: "9RB7B",
+      account: {
+        id: 300003425082297,
+        name: "HINDUSTAN FOODS LIMITED (Coimbatore, IN)",
+        number: "12517173"
+      },
+      salesStage: "6. Close"
+    },
+    {
+      value: 100004317199648,
+      label: "9V3SR - ELQ-Stockholding Document Management Services Limited-IN",
+      name: "ELQ-Stockholding Document Management Services Limited-IN",
+      number: "9V3SR",
+      account: {
+        id: 100000809973374,
+        name: "Stock Holding Corporation Of India Limited",
+        number: "3462326"
+      },
+      salesStage: "6. Close"
+    },
+    {
+      value: 100004317199645,
+      label: "9MGND - JP_Gunma_Police_NEC",
+      name: "JP_Gunma_Police_NEC",
+      number: "9MGND",
+      account: {
+        id: 100000810555137,
+        name: "群馬県警察本部",
+        number: "3587942"
+      },
+      salesStage: "6. Close"
+    },
+    {
+      value: 100004317199647,
+      label: "9QMWL - R Strategic Global_N",
+      name: "R Strategic Global_N",
+      number: "9QMWL",
+      account: {
+        id: 100004235544074,
+        name: "R Strategic Global (BHOPAL, IN)",
+        number: "12665189"
+      },
+      salesStage: "6. Close"
+    },
+    {
+      value: 100004504504405,
+      label: "9TD7T - CAG - Service Cloud for CTS",
+      name: "CAG - Service Cloud for CTS",
+      number: "9TD7T",
+      account: {
+        id: 100000693796877,
+        name: "CHANGI AIRPORT GROUP (SINGAPORE) PTE. LTD.",
+        number: "1249068"
+      },
+      salesStage: "1. Assessment & Qualification"
+    }
+  ];
   countries = [
     { label: "Afghanistan", value: "AF" },
     { label: "Aland Islands", value: "AX" },
@@ -401,10 +880,13 @@ class Create extends Component {
               <div className="ColumnItemRight">
                 <select name="cars" id="cars">
                   <option value="">Select Opportunity</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                  {this.opportunities.map((opportunity, i) => {
+                    return (
+                      <option key={i} value={opportunity.value}>
+                        {opportunity.label}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -413,10 +895,13 @@ class Create extends Component {
               <div className="ColumnItemRight">
                 <select name="cars" id="cars">
                   <option value="">Select Account</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="opel">Opel</option>
-                  <option value="audi">Audi</option>
+                  {this.accounts.map((account, i) => {
+                    return (
+                      <option key={i} value={account.value}>
+                        {account.label}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -541,9 +1026,8 @@ class Create extends Component {
                 className="ServiceItem"
                 onClick={this.showQuestions.bind(this, 2)}
               >
-                <b>Consumption Service -</b> One or many customer workshop or
-                event focused on highlighting compelling and differentiated
-                positioning of Oracle Solution and Capabilities.
+                <b>Consumption Service -</b> Service focused on enhancing the
+                consumption of our service offerings.
               </div>
             ) : (
               ""
@@ -553,9 +1037,8 @@ class Create extends Component {
                 className="ServiceItem"
                 onClick={this.showQuestions.bind(this, 3)}
               >
-                <b>Opportunity Pursuit -</b> One or many customer workshop or
-                event focused on highlighting compelling and differentiated
-                positioning of Oracle Solution and Capabilities.
+                <b>Opportunity Pursuit -</b> Service which helps in winning the
+                current opportunity.
               </div>
             ) : (
               ""
@@ -565,9 +1048,9 @@ class Create extends Component {
                 className="ServiceItem"
                 onClick={this.showQuestions.bind(this, 4)}
               >
-                <b>Expansion/Renewal Services -</b> One or many customer
-                workshop or event focused on highlighting compelling and
-                differentiated positioning of Oracle Solution and Capabilities.
+                <b>Expansion/Renewal Services -</b> Service which is focused on
+                Expansion of the services provided, or Renewal of our service
+                offerings.
               </div>
             ) : (
               ""
@@ -684,31 +1167,6 @@ class Create extends Component {
                 <div className="QuestionAnswers">
                   <div className="Question">
                     Does this require on site resources?*
-                  </div>
-                  <div className="Answer">
-                    <textarea />
-                  </div>
-                </div>
-                <div className="QuestionAnswers">
-                  <div className="Question">
-                    What is the timeline identified to begin the service?*
-                  </div>
-                  <div className="Answer">
-                    <textarea />
-                  </div>
-                </div>
-                <div className="QuestionAnswers">
-                  <div className="Question">
-                    What needs to be highlighted for the customer?*
-                  </div>
-                  <div className="Answer">
-                    <textarea />
-                  </div>
-                </div>
-                <div className="QuestionAnswers">
-                  <div className="Question">
-                    Who are the key customer stakeholders and personas to
-                    target?*
                   </div>
                   <div className="Answer">
                     <textarea />
