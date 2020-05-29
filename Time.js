@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import "./time.css";
 class Time extends Component {
-
+  state = {
+    nums: [1, 2, 3]
+  }
+  
+  addService = (event) => {
+    this.state.nums.push(this.state.nums.length+1);
+    console.log(this.state.nums);
+  }
   render() {
     return (
       <div className="TimeContainer">
@@ -37,152 +44,140 @@ class Time extends Component {
           <div className="TimeEntryTable">
             <table>
               <thead>
-              <tr>
-                <th>Service Request</th>
-                <th>Activity</th>
-                <th>Task Type</th>
-                <th>Delivery Type</th>
-                <th>
-                  Sat <br />
-                  (30 MAY)
-                </th>
-                <th>
-                  Sun <br />
-                  (24 MAY)
-                </th>
-                <th>
-                  Mon <br />
-                  (25 MAY)
-                </th>
-                <th>
-                  Tue <br />
-                  (2 JUN)
-                </th>
-                <th>
-                  Wed <br />
-                  (27 MAY)
-                </th>
-                <th>
-                  Thu <br />
-                  (28 MAY)
-                </th>
-                <th>
-                  Fri <br />
-                  (29 MAY)
-                </th>
-                <th>Note</th>
-                <th></th>
-              </tr>
+                <tr>
+                  <th>Service Request</th>
+                  <th>Activity</th>
+                  <th>Task Type</th>
+                  <th>Delivery Type</th>
+                  <th>
+                    Sat <br />
+                    (30 MAY)
+                  </th>
+                  <th>
+                    Sun <br />
+                    (31 MAY)
+                  </th>
+                  <th>
+                    Mon <br />
+                    (1 JUN)
+                  </th>
+                  <th>
+                    Tue <br />
+                    (2 JUN)
+                  </th>
+                  <th>
+                    Wed <br />
+                    (3 JUN)
+                  </th>
+                  <th>
+                    Thu <br />
+                    (4 JUN)
+                  </th>
+                  <th>
+                    Fri <br />
+                    (5 JUN)
+                  </th>
+                  <th>Note</th>
+                  <th />
+                </tr>
               </thead>
               <tbody>
-              { 
-                [1,2,3].map((num, index) => (
-              <tr key={index}>
-                <td>
-                  <select name="cars" id="cars">
-                    <option value="">Select Service Request</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                </td>
-                <td>
-                  <select name="cars" id="cars">
-                    <option value="">Select Activity</option>
-                    <option value="volvo">Day 1 Onboarding</option>
-                    <option value="saab">Technical Support</option>
-                    <option value="opel">Cloud Coaching</option>
-                  </select>
-                </td>
-                <td>
-                  <select name="cars" id="cars">
-                    <option value="">Task Type</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                </td>
-                <td>
-                  <select name="cars" id="cars">
-                    <option value="">Delivery Type</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                  </select>
-                
-                </td>
-                <td>
-                  <input className="TimeCell" type="number"/>
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td>
-                  <input className="TimeCell" type="number" />
-                </td>
-                <td><button>Note</button></td>
-                <td><button>Delete</button></td>
-              </tr>
-                ))
-              }
-              <tr>
-                <td colspan="13">
-                  <div className="TimeAction">
-                  <button className="TimeActionButtons">
-                    Add Service Row
-                  </button>
-                  <button className="TimeActionButtons">
-                    Add Non Service Row
-                  </button>
-                  <button className="TimeActionButtons">
-                    Save
-                  </button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  Total
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td className="TimeTotal">
-                  0
-                </td>
-                <td colspan="2">
-                </td>
-              </tr>
+                {this.state.nums.map((num, index) => (
+                  <tr key={index}>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Select Service Request</option>
+                        <option value="customerWorkshopOrCloudDay">
+                          Customer Workshop or Cloud Day
+                        </option>
+                        <option value="consumptionService">
+                          Consumption Service
+                        </option>
+                        <option value="opportunityPursuit">
+                          Opportunity Pursuit
+                        </option>
+                        <option value="expansionRenewalServices">
+                          Expansion/Renewal Services
+                        </option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Select Activity</option>
+                        <option value="volvo">Day 1 Onboarding</option>
+                        <option value="saab">Technical Support</option>
+                        <option value="opel">Cloud Coaching</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Task Type</option>
+                        <option value="followUp">Follow-up</option>
+                        <option value="preperation">Preperation</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="travel">Travel</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Delivery Type</option>
+                        <option value="remote">Remote</option>
+                        <option value="faceToFace">Face to Face</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <button>Note</button>
+                    </td>
+                    <td>
+                      <button>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+                <tr>
+                  <td colSpan="13">
+                    <div className="TimeAction">
+                      <button className="TimeActionButtons" onClick={this.addService}>
+                        Add Service Row
+                      </button>
+                      <button className="TimeActionButtons">
+                        Add Non Service Row
+                      </button>
+                      <button className="TimeActionButtons">Save</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan="4">Total</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td className="TimeTotal">0</td>
+                  <td colSpan="2" />
+                </tr>
               </tbody>
             </table>
           </div>

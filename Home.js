@@ -18,12 +18,6 @@ class Home extends Component {
               <div className="ListingItemText">Create Service Request</div>
             </div>
           </Link>
-          <Link to="/list">
-            <div className="ListingItem">
-              <div className="ListingItemIcon"><div className="MyServiceRequest"></div></div>
-              <div className="ListingItemText">My Service Requests</div>
-            </div>
-          </Link>
           <Link to="/time">
             <div className="ListingItem">
               <div className="ListingItemIcon"><div className="ManageTime"></div></div>
@@ -37,3 +31,10 @@ class Home extends Component {
 }
 
 export default Home;
+
+// <Link to="/list">
+//             <div className="ListingItem">
+//               <div className="ListingItemIcon"><div className="MyServiceRequest"></div></div>
+//               <div className="ListingItemText">My Service Requests</div>
+//             </div>
+//           </Link>

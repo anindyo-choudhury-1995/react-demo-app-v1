@@ -242,3 +242,9 @@ writing-mode:horizontal-tb;
 .TimeTotal {
   text-align:  center;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
