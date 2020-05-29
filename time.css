@@ -175,6 +175,12 @@ writing-mode:horizontal-tb;
     left: 0;
 }
 
+.StickyTotal {
+  position: sticky;
+    width: fit-content;
+    left: 0;
+}
+
 .TimeActionButtons {
   align-items:center;
 background-color:rgba(0, 0, 0, 0);

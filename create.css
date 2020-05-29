@@ -137,9 +137,14 @@ width:160px;
     margin: 8px 0;
 }
 
+.ChangeServiceBox {
+  text-align: -webkit-right;
+}
+
 .QuestionAnswers {
   display: flex;
   flex-wrap: wrap;
+  padding: 8px 8px 16px 8px;
 }
 
 .Question {

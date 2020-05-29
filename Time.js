@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import "./time.css";
 class Time extends Component {
   state = {
-    nums: [1, 2, 3]
+    nums: [1, 2, 3],
+    otherNums: []
   }
   
   addService = (event) => {
     var newNums = JSON.parse(JSON.stringify(this.state.nums));
     newNums.push(newNums.length+1);
     this.setState({nums: newNums});
+  }
+  addNonService = (event) => {
+    var newOtherNums = JSON.parse(JSON.stringify(this.state.otherNums));
+    newOtherNums.push(newOtherNums.length+1);
+    this.setState({otherNums: newOtherNums});
   }
   render() {
     return (
@@ -155,13 +161,77 @@ class Time extends Component {
                     </td>
                   </tr>
                 ))}
+                {this.state.otherNums.map((num, index) => (
+                  <tr key={index}>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="non-service">Non Service</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Select Activity</option>
+                        <option value="volvo">Day 1 Onboarding</option>
+                        <option value="saab">Technical Support</option>
+                        <option value="opel">Cloud Coaching</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Task Type</option>
+                        <option value="trainingPersonalDevelopment">Training/Personal Development</option>
+                        <option value="corporateCitizenship">Corporate Citizenship</option>
+                        <option value="contentCration">Content Creation</option>
+                        <option value="administration">Administration</option>
+                        <option value="partnerActivities">Partner Activities</option>
+                        <option value="timeOff">Time Off</option>
+                        <option value="trainingDelivery">Training Delivery</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="cars" id="cars">
+                        <option value="">Delivery Type</option>
+                        <option value="remote">Remote</option>
+                        <option value="faceToFace">Face to Face</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <input className="TimeCell" type="number" />
+                    </td>
+                    <td>
+                      <button>Note</button>
+                    </td>
+                    <td>
+                      <button>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+
                 <tr>
                   <td colSpan="13">
                     <div className="TimeAction">
                       <button className="TimeActionButtons" onClick={this.addService}>
                         Add Service Row
                       </button>
-                      <button className="TimeActionButtons">
+                      <button className="TimeActionButtons" onClick={this.addNonService} >
                         Add Non Service Row
                       </button>
                       <button className="TimeActionButtons">Save</button>
@@ -169,7 +239,7 @@ class Time extends Component {
                   </td>
                 </tr>
                 <tr>
-                  <td colSpan="4">Total</td>
+                  <td colSpan="4"><div className="StickyTotal">Total</div></td>
                   <td className="TimeTotal">0</td>
                   <td className="TimeTotal">0</td>
                   <td className="TimeTotal">0</td>
